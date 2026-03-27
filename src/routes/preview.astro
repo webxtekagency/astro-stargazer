@@ -2,6 +2,7 @@
 export const prerender = false;
 
 import Nav from './_Nav.astro';
+import { DOCS_URL } from '../config';
 
 const { slug } = Astro.params;
 
@@ -42,7 +43,6 @@ try {
   }
 } catch { }
 
-const docsLink = `${basePath}/documentation`;
 
 const embedBase = `${basePath}/frame/${slug}`;
 const propsJson = JSON.stringify(preview.props || {});
@@ -145,7 +145,7 @@ const propsJson = JSON.stringify(preview.props || {});
   {usingBuiltinLayout && (
     <div class="sg-builtin-warn">
       <span>⚠ Using the <strong>Stargazer built-in layout</strong> — your project styles are not loaded. Components may look or behave differently than in your site. Add a layout in <code>src/layouts/</code> to fix this.</span>
-      <a href={docsLink}>Read the docs →</a>
+      <a href={DOCS_URL} target="_blank" rel="noopener noreferrer">Read the docs →</a>
     </div>
   )}
 
