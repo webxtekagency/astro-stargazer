@@ -17,6 +17,7 @@ function layoutFileName(
     const path = layoutsMap[key];
     return path.split("/").pop() || path;
 }
+import { WEBXTEK_URL } from '../config';
 const registryUrl = new URL("/__stargazer/registry.json", Astro.url.origin);
 const res = await fetch(registryUrl.href);
 const data = await res.json();
@@ -1800,7 +1801,7 @@ const componentsJson = JSON.stringify(
             <div class="sg-footer-credits">
                 Developed by Josué Trindade © {new Date().getFullYear()}
                 <strong
-                    ><a href="https://webxtek.com" target="_blank">Webxtek</a
+                    ><a href={WEBXTEK_URL} target="_blank">Webxtek</a
                     ></strong
                 >
             </div>
