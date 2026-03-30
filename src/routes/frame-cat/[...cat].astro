@@ -130,6 +130,9 @@ const darkModeConfigStr = JSON.stringify(darkModeConfig);
     --sg-label-dot: rgba(221, 241, 96, 0.8);
     --sg-divider-start: rgba(221, 241, 96, 0.35);
     --sg-divider-mid: rgba(221, 241, 96, 0.08);
+    --sg-copy-border: rgba(221, 241, 96, 0.12);
+    --sg-copy-color: rgba(221, 241, 96, 0.25);
+    --sg-copy-hover: rgba(221, 241, 96, 0.9);
   }
   html[data-theme="light"] {
     --sg-label-bg: rgba(255, 255, 255, 0.92);
@@ -139,6 +142,9 @@ const darkModeConfigStr = JSON.stringify(darkModeConfig);
     --sg-label-dot: #8a9600;
     --sg-divider-start: rgba(0, 0, 0, 0.15);
     --sg-divider-mid: rgba(0, 0, 0, 0.05);
+    --sg-copy-border: rgba(0, 0, 0, 0.1);
+    --sg-copy-color: rgba(0, 0, 0, 0.3);
+    --sg-copy-hover: #8a9600;
   }
 
   .sg-section {
@@ -174,18 +180,18 @@ const darkModeConfigStr = JSON.stringify(darkModeConfig);
     align-items: center;
     background: transparent;
     border: none;
-    border-left: 1px solid rgba(221, 241, 96, 0.12);
+    border-left: 1px solid var(--sg-copy-border);
     cursor: pointer;
-    color: rgba(221, 241, 96, 0.25);
+    color: var(--sg-copy-color);
     padding: 2px 4px 2px 10px;
     border-radius: 0;
     transition: color 0.2s;
     margin-left: 6px;
   }
   .sg-label__copy:hover {
-    color: rgba(221, 241, 96, 0.9);
+    color: var(--sg-copy-hover);
   }
-  .sg-label__copy.sg-cat-copied { color: rgba(221, 241, 96, 0.9); }
+  .sg-label__copy.sg-cat-copied { color: var(--sg-copy-hover); }
   .sg-label__copy svg { width: 13px; height: 13px; display: block; flex-shrink: 0; }
   .sg-label__copy svg path { stroke: currentColor; fill: none; }
 
